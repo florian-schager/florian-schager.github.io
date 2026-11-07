@@ -1,0 +1,65 @@
+/* Same palette and type as the Atlas of Distributed Algorithms. */
+:root {
+  --bg: #fbfaf7;
+  --text: #1d1d1b;
+  --muted: #66645e;
+  --border: #e3e0d8;
+  --accent: #b4462a;
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #161614;
+    --text: #ecebe6;
+    --muted: #a19f97;
+    --border: #34332f;
+    --accent: #e57a5c;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.6 var(--sans);
+}
+
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+
+.wrap { max-width: 760px; margin: 0 auto; padding: 64px 16px 80px; }
+
+h1, h2 { font-family: var(--serif); font-weight: 600; line-height: 1.2; }
+
+.intro { padding-bottom: 28px; border-bottom: 1px solid var(--border); }
+.intro h1 { font-size: 2.4rem; margin: 0 0 12px; }
+.role { font-size: 1.1rem; margin: 0 0 12px; }
+.links { display: flex; flex-wrap: wrap; gap: 4px 20px; margin: 0; font-size: 0.95rem; }
+
+h2 { font-size: 1.5rem; margin: 40px 0 16px; }
+
+.pubs { list-style: none; margin: 0; padding: 0; }
+.pubs li {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+}
+.pubs li:last-child { border-bottom: 0; }
+.pubs .title { font-family: var(--serif); font-size: 1.12rem; font-weight: 600; }
+.pubs .authors { color: var(--text); }
+.pubs .authors b { font-weight: 600; }
+.pubs .venue { color: var(--muted); font-style: italic; }
+.pubs .refs { font-size: 0.92rem; }
+
+@media (max-width: 520px) {
+  .wrap { padding-top: 40px; }
+  .intro h1 { font-size: 2rem; }
+}
