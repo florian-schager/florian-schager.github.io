@@ -17,6 +17,68 @@
         <a href="https://www.tugraz.at/institute/atcs/home">Institute of Algorithms and Theory</a>, TU Graz,
         under the supervision of <a href="https://academia.yannicmaus.de/">Yannic Maus</a>.
       </p>
+      <a class="atlas-link" href="/atlas/">
+        <!-- Four islands, one small example per problem: MIS, maximal matching, vertex coloring, edge coloring.
+             They sit below and to the right of the label so the text never crosses them on wide screens. -->
+        <svg class="atlas-map" viewBox="0 0 560 200" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
+          <defs>
+            <path id="isl-mis" d="M22 146 C18 124 44 108 78 110 C112 112 142 122 142 146 C142 172 116 190 80 188 C46 186 26 168 22 146 Z"/>
+            <path id="isl-mm" d="M158 150 C156 126 184 114 216 116 C250 118 274 132 272 156 C270 180 244 196 212 194 C180 192 160 174 158 150 Z"/>
+            <path id="isl-vc" d="M300 132 C298 108 326 96 356 98 C388 100 410 116 408 140 C406 166 382 184 352 182 C322 180 302 158 300 132 Z"/>
+            <path id="isl-ec" d="M428 100 C424 74 452 56 484 58 C518 60 542 78 540 104 C538 132 514 152 482 150 C450 148 432 126 428 100 Z"/>
+          </defs>
+          <path class="map-grid" d="M0 50 H560 M0 100 H560 M0 150 H560 M70 0 V200 M140 0 V200 M210 0 V200 M280 0 V200 M350 0 V200 M420 0 V200 M490 0 V200"/>
+          <path class="map-wave" d="M412 180 q5 -5 10 0 t10 0 M526 166 q5 -5 10 0 t10 0 M282 186 q5 -5 10 0 t10 0 M548 40 q5 -5 10 0"/>
+          <g class="map-land">
+            <use href="#isl-mis"/><use href="#isl-mm"/><use href="#isl-vc"/><use href="#isl-ec"/>
+          </g>
+          <g class="map-shore">
+            <use href="#isl-mis" transform="translate(82 149) scale(.84) translate(-82 -149)"/>
+            <use href="#isl-mm" transform="translate(215 155) scale(.84) translate(-215 -155)"/>
+            <use href="#isl-vc" transform="translate(354 140) scale(.84) translate(-354 -140)"/>
+            <use href="#isl-ec" transform="translate(484 104) scale(.84) translate(-484 -104)"/>
+          </g>
+
+          <!-- MIS: the filled nodes form a maximal independent set. -->
+          <g class="map-graph">
+            <path class="edge" d="M48 145 L78 124 L112 138 L104 170 L62 172 Z M78 124 L104 170"/>
+            <circle class="node in-set" cx="48" cy="145" r="6"/><circle class="node" cx="78" cy="124" r="6"/>
+            <circle class="node in-set" cx="112" cy="138" r="6"/><circle class="node" cx="104" cy="170" r="6"/>
+            <circle class="node" cx="62" cy="172" r="6"/>
+          </g>
+
+          <!-- Maximal matching: the thick edges. -->
+          <g class="map-graph">
+            <path class="edge" d="M214 126 L246 142 M242 174 L210 182 M180 168 L184 140 M214 126 L210 182"/>
+            <path class="edge matched" d="M184 140 L214 126 M246 142 L242 174 M210 182 L180 168"/>
+            <circle class="node" cx="184" cy="140" r="6"/><circle class="node" cx="214" cy="126" r="6"/>
+            <circle class="node" cx="246" cy="142" r="6"/><circle class="node" cx="242" cy="174" r="6"/>
+            <circle class="node" cx="210" cy="182" r="6"/><circle class="node" cx="180" cy="168" r="6"/>
+          </g>
+
+          <!-- Vertex coloring: adjacent nodes get different colours. -->
+          <g class="map-graph">
+            <path class="edge" d="M326 130 L354 112 L384 128 L378 162 L336 164 Z M354 112 L336 164 M354 112 L378 162"/>
+            <circle class="node c1" cx="354" cy="112" r="6"/><circle class="node c2" cx="326" cy="130" r="6"/>
+            <circle class="node c3" cx="384" cy="128" r="6"/><circle class="node c2" cx="378" cy="162" r="6"/>
+            <circle class="node c3" cx="336" cy="164" r="6"/>
+          </g>
+
+          <!-- Edge coloring: edges at a common node get different colours. -->
+          <g class="map-graph">
+            <path class="edge e1" d="M452 104 L480 78 M514 96 L506 132"/>
+            <path class="edge e2" d="M480 78 L514 96 M506 132 L466 134"/>
+            <path class="edge e3" d="M466 134 L452 104 M480 78 L506 132"/>
+            <circle class="node" cx="452" cy="104" r="5"/><circle class="node" cx="480" cy="78" r="5"/>
+            <circle class="node" cx="514" cy="96" r="5"/><circle class="node" cx="506" cy="132" r="5"/>
+            <circle class="node" cx="466" cy="134" r="5"/>
+          </g>
+        </svg>
+        <span class="atlas-text">
+          <span class="atlas-title">Atlas of Distributed Algorithms <span class="atlas-arrow" aria-hidden="true">→</span></span>
+          <span class="atlas-desc">The state of the art in distributed symmetry breaking</span>
+        </span>
+      </a>
     </header>
 
     <section aria-labelledby="pubs">
