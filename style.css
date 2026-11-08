@@ -7,6 +7,13 @@
   --accent: #b4462a;
   --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
   --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  /* Publication types: background tint and a stronger edge colour. */
+  --preprint-bg: #efeeea;
+  --preprint-edge: #9a978e;
+  --conference-bg: #e6f1e5;
+  --conference-edge: #3f8a4f;
+  --journal-bg: #efe7f4;
+  --journal-edge: #7a4a99;
   color-scheme: light dark;
 }
 
@@ -17,6 +24,12 @@
     --muted: #a19f97;
     --border: #34332f;
     --accent: #e57a5c;
+    --preprint-bg: #252522;
+    --preprint-edge: #7d7a72;
+    --conference-bg: #1d2a1f;
+    --conference-edge: #74c085;
+    --journal-bg: #2a2133;
+    --journal-edge: #c09ae0;
   }
 }
 
@@ -38,21 +51,48 @@ a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset:
 h1, h2 { font-family: var(--serif); font-weight: 600; line-height: 1.2; }
 
 .intro { padding-bottom: 28px; border-bottom: 1px solid var(--border); }
+.intro::after { content: ""; display: block; clear: both; }
+/* Floated so the name and affiliation wrap around it, top right on every screen size. */
+.portrait {
+  float: right;
+  width: 160px;
+  height: auto;
+  margin: 0 0 12px 28px;
+  border-radius: 8px;
+}
 .intro h1 { font-size: 2.4rem; margin: 0 0 12px; }
 .role { font-size: 1.1rem; margin: 0 0 12px; }
 .links { display: flex; flex-wrap: wrap; gap: 4px 20px; margin: 0; font-size: 0.95rem; }
 
 h2 { font-size: 1.5rem; margin: 40px 0 16px; }
 
+/* Section heading with the profile links on the right; the links drop below the heading on narrow screens. */
+.section-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 24px; margin: 40px 0 16px; }
+.section-head h2 { margin: 0; }
+
+.pub-preprint   { --pub-bg: var(--preprint-bg);   --pub-edge: var(--preprint-edge); }
+.pub-conference { --pub-bg: var(--conference-bg); --pub-edge: var(--conference-edge); }
+.pub-journal    { --pub-bg: var(--journal-bg);    --pub-edge: var(--journal-edge); }
+
+.legend { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 24px; margin: 20px 0 0; padding: 0; font-size: 0.88rem; }
+.legend li {
+  padding: 3px 12px 3px 10px;
+  background: var(--pub-bg);
+  border-left: 3px solid var(--pub-edge);
+  border-radius: 4px;
+}
+
 .pubs { list-style: none; margin: 0; padding: 0; }
 .pubs li {
   display: flex;
   flex-direction: column;
   gap: 2px;
-  padding: 16px 0;
-  border-bottom: 1px solid var(--border);
+  margin-bottom: 12px;
+  padding: 14px 18px;
+  background: var(--pub-bg);
+  border-left: 4px solid var(--pub-edge);
+  border-radius: 6px;
 }
-.pubs li:last-child { border-bottom: 0; }
 .pubs .title { font-family: var(--serif); font-size: 1.12rem; font-weight: 600; }
 .pubs .authors { color: var(--text); }
 .pubs .authors b { font-weight: 600; }
@@ -62,4 +102,7 @@ h2 { font-size: 1.5rem; margin: 40px 0 16px; }
 @media (max-width: 520px) {
   .wrap { padding-top: 40px; }
   .intro h1 { font-size: 2rem; }
+  .portrait { width: 104px; margin-left: 16px; }
 }
+
+abbr[title] { text-decoration: none; cursor: help; }
